@@ -23,16 +23,16 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
               <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>مجموعة 2025 متاحة الآن</span>
+              <span>مجموعة {new Date().getFullYear()} متاحة الآن</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
               اكتشف
-              <span className="block text-amber-400">عطرك المثالي</span>
+              <span className="block text-amber-400">عطرك المفضل</span>
             </h1>
 
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              أكثر من 20 عطراً فاخراً من كبرى دور العطور العالمية.
+              أكثر من 30 عطراً فاخراً من كبرى دور العطور العالمية.
               اعثر على العطر الذي يعبر عن شخصيتك الفريدة.
             </p>
 
@@ -53,9 +53,9 @@ export default function HomePage() {
             {/* Stats */}
             <div className="flex gap-8 mt-12 pt-8 border-t border-white/20">
               {[
-                { num: '20+', label: 'عطر فاخر' },
-                { num: '10+', label: 'ماركة عالمية' },
-                { num: '5000+', label: 'عميل سعيد' },
+                { num: '30+', label: 'عطر فاخر' },
+                { num: '20+', label: 'ماركة عالمية' },
+                { num: '500+', label: 'عميل سعيد' },
               ].map(s => (
                 <div key={s.label}>
                   <p className="text-3xl font-bold text-amber-400">{s.num}</p>

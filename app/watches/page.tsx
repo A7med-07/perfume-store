@@ -29,7 +29,7 @@ export default function WatchesPage() {
   const [selectedGender, setSelectedGender] = useState('all')
   const [sortBy, setSortBy] = useState('default')
   const [showFilters, setShowFilters] = useState(false)
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 50000])
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 150000])
 
   const filtered = useMemo(() => {
     let result = [...watches]
@@ -57,14 +57,14 @@ export default function WatchesPage() {
     selectedCategory !== 'الكل',
     selectedBrand !== 'الكل',
     selectedGender !== 'all',
-    priceRange[0] > 0 || priceRange[1] < 50000,
+    priceRange[0] > 0 || priceRange[1] < 150000,
   ].filter(Boolean).length
 
   const resetFilters = () => {
     setSelectedCategory('الكل')
     setSelectedBrand('الكل')
     setSelectedGender('all')
-    setPriceRange([0,50000])
+    setPriceRange([0, 150000])
     setSearch('')
   }
 
@@ -149,7 +149,7 @@ export default function WatchesPage() {
             <p className="font-medium mb-3 text-sm text-gray-600">
               السعر: {priceRange[0].toLocaleString()} — {priceRange[1].toLocaleString()} جنيه
             </p>
-            <input type="range" min={0} max={50000} step={500} value={priceRange[1]} onChange={e=>setPriceRange([priceRange[0], Number(e.target.value)])} className="w-full accent-black"/>
+            <input type="range" min={0} max={150000} step={500} value={priceRange[1]} onChange={e=>setPriceRange([priceRange[0], Number(e.target.value)])} className="w-full accent-black"/>
           </div>
         </div>
       )}

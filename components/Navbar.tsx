@@ -18,14 +18,28 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm" dir="ltr">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl">🌹</span>
-            <span className="font-bold text-xl tracking-wide">Luxe Parfums</span>
+            <span className="text-2xl">
+              <svg width="28" height="28" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="body-clip">
+                    <rect x="8" y="17" width="24" height="27" rx="6" />
+                  </clipPath>
+                </defs>
+                <rect x="8" y="23" width="24" height="21" fill="#C8920A" opacity="0.55" clip-path="url(#body-clip)" />
+                <path d="M21 7 L34 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <rect x="15" y="3" width="12" height="8" rx="4" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <rect x="17" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7" />
+                <rect x="8" y="17" width="24" height="27" rx="6" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <line x1="20" y1="17" x2="20" y2="44" stroke="currentColor" stroke-width="0.8" opacity="0.2" />
+              </svg>
+            </span>
+            <span className="font-bold text-xl tracking-wide">Sillage</span>
           </Link>
 
           {/* Desktop Links */}

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 
 
 export const metadata: Metadata = {
-  title: 'Luxe Parfums — عطور فاخرة',
+  title: 'Sillage — أثر العطر في الهواء',
   description: 'اكتشف مجموعتنا الحصرية من أرقى العطور العالمية',
 }
 
