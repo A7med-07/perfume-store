@@ -4,6 +4,8 @@ import { ArrowLeft, Sparkles, Shield, Truck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ProductCard from '@/components/ProductCard'
 import { perfumes } from './data/perfumes'
+import Image from 'next/image'
+import Silage from '../public/Sillage.png'
 
 
 export default function HomePage() {
@@ -13,58 +15,75 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-950 text-white overflow-hidden min-h-[85vh] flex items-center">
+      <section className="relative bg-black text-white overflow-hidden min-h-[85vh] flex items-center">
         {/* Background */}
         <div className="absolute inset-0 opacity-30"
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541643600914-78b084683702?w=1400')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="absolute inset-0 bg-gradient-to-l from-gray-950 via-gray-950/80 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>مجموعة {new Date().getFullYear()} متاحة الآن</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            {/* TEXT */}
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm mb-6">
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                <span>مجموعة {new Date().getFullYear()} متاحة الآن</span>
+              </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                اكتشف
+                <span className="block text-amber-400">عطرك المفضل</span>
+              </h1>
+
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                أكثر من 20 عطراً فاخراً من كبرى دور العطور العالمية.
+                اعثر على العطر الذي يعبر عن شخصيتك الفريدة.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/products">
+                  <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-bold gap-2 px-8">
+                    تسوق الآن
+                    <ArrowLeft className="w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link href="/compare">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black gap-2 px-8">
+                    قارن العطور
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Stats */}
+              <div className="flex gap-8 mt-12 pt-8 border-t border-white/20">
+                {[
+                  { num: '20+', label: 'عطر فاخر' },
+                  { num: '20+', label: 'ماركة عالمية' },
+                  { num: '500+', label: 'عميل سعيد' },
+                ].map(s => (
+                  <div key={s.label}>
+                    <p className="text-3xl font-bold text-amber-400">{s.num}</p>
+                    <p className="text-gray-400 text-sm">{s.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-              اكتشف
-              <span className="block text-amber-400">عطرك المفضل</span>
-            </h1>
-
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              أكثر من 30 عطراً فاخراً من كبرى دور العطور العالمية.
-              اعثر على العطر الذي يعبر عن شخصيتك الفريدة.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link href="/products">
-                <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-bold gap-2 px-8">
-                  تسوق الآن
-                  <ArrowLeft className="w-5 h-5" />
-                </Button>
-              </Link>
-              <Link href="/compare">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black gap-2 px-8">
-                  قارن العطور
-                </Button>
-              </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="flex gap-8 mt-12 pt-8 border-t border-white/20">
-              {[
-                { num: '30+', label: 'عطر فاخر' },
-                { num: '20+', label: 'ماركة عالمية' },
-                { num: '500+', label: 'عميل سعيد' },
-              ].map(s => (
-                <div key={s.label}>
-                  <p className="text-3xl font-bold text-amber-400">{s.num}</p>
-                  <p className="text-gray-400 text-sm">{s.label}</p>
-                </div>
-              ))}
+            {/* IMAGE */}
+            <div className="flex justify-center md:justify-end">
+              
+              <Image
+                src={Silage}
+                alt="Sillage Perfume"
+                width={400}
+                height={500}
+                className="object-contain drop-shadow-2xl"
+              />
             </div>
           </div>
         </div>
+
       </section>
 
       {/* Features */}

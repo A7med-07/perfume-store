@@ -16,6 +16,9 @@ type CartItem = {
 export type Order = {
   id: string
   customerName: string
+  customerEmail?: string
+  customerPhone?: string
+  customerAddress?: string
   items: CartItem[]
   total: number
   status: 'pending' | 'processing' | 'delivered' | 'cancelled'
@@ -41,10 +44,12 @@ export const useCartStore = create<CartStore>()(
         const items = get().items
         const existing = items.find(i => i.product?.id === product.id && i.selectedOption === option)
         if (existing) {
-          set({ items: items.map(i =>
-            i.product?.id === product.id && i.selectedOption === option
-              ? { ...i, quantity: i.quantity + 1 } : i
-          )})
+          set({
+            items: items.map(i =>
+              i.product?.id === product.id && i.selectedOption === option
+                ? { ...i, quantity: i.quantity + 1 } : i
+            )
+          })
         } else {
           set({ items: [...items, { product, quantity: 1, selectedOption: option }] })
         }

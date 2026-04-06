@@ -75,10 +75,10 @@ export default function Navbar() {
                 </span>
               )}
             </Link>
-
+{/* 
             <Link href="/admin" className="hidden md:block">
               <Button variant="outline" size="sm">Admin</Button>
-            </Link>
+            </Link> */}
 
             {/* Mobile Menu Button */}
             <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
