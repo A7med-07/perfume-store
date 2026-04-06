@@ -111,11 +111,11 @@ export default function ProductDetails({ watch, related }: { watch: Watch, relat
             <div className="flex gap-4">
               <Button 
                 size="lg" 
-                className={`flex-1 h-16 text-lg rounded-2xl transition-all shadow-lg ${added ? 'bg-green-600 scale-95' : 'bg-black hover:bg-amber-600'}`}
+                className={`flex-1 h-16 text-lg rounded-2xl transition-all shadow-lg ${added ? 'bg-green-600 scale-95' : 'bg-black hover:bg-gray-800'}`}
                 onClick={handleAddToCart}
               >
                 <ShoppingBag className="mr-2 w-6 h-6" />
-                {added ? 'تمت الإضافة بنجاح' : 'أضف إلى حقيبة التسوق'}
+                {added ? 'تمت الإضافة بنجاح' : 'أضف إلى السلة'}
               </Button>
               <Button size="lg" variant="outline" className={`h-16 w-16 rounded-2xl ${inCompare ? 'text-blue-600 border-blue-600 bg-blue-50' : ''}`} onClick={() => addToCompare(watch)}>
                 <GitCompare className="w-6 h-6" />

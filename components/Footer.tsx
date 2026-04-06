@@ -29,8 +29,8 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">تواصل معنا</h3>
           <div className="flex flex-col gap-2 text-sm">
             <p>📧 SillagePerfumes@gmail.com</p>
-            <p>📞 01000000000</p>
-            <p>📍 البحيرة، مصر</p>
+            <p>📞 01001992889</p>
+            <p>📍 الدلنجات، البحيرة، مصر</p>
           </div>
         </div>
       </div>
